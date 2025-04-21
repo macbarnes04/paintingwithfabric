@@ -1,0 +1,168 @@
+#loading-screen {
+  margin: 0;
+  background: #f9f9f9;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  flex-direction: column;
+  transition: opacity 2.5s ease-in-out;  
+  opacity: 1; /* Start visible */
+  z-index: 10; /* Ensure it's above main content */
+}
+
+#loading-screen.loaded {
+  opacity: 0;
+}
+
+.text-slide {
+  font-size: 30px;
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 600;
+  color: grey;
+  opacity: 0;
+  position: absolute;
+  left: 50%;
+  bottom: 35%;
+  transform: translateX(-50%) translateY(50%);
+  z-index: 10000;
+  transition: opacity 1s ease-in-out, transform 1s ease-in-out 5s; /* Wait 5 seconds before sliding in */
+}
+
+svg {
+  width: 90vw;
+  height: auto;
+}
+
+.swatch {
+  transform-origin: center;
+  animation: placeSwatch 1s ease forwards;
+  opacity: 0; 
+}
+
+/* Updated to control opacity of images separately */
+.fabric-texture {
+  opacity: 0.55;  /* Adjust opacity as needed */
+}
+
+/* Swatches with color and transparency - Keeping this for the fill color effects in SVG */
+.swatch:nth-child(1) {
+  fill: rgba(216, 67, 21, 0.7);  /* Orange */
+  transform: translate(-200px, -100px) rotate(-45deg);
+  animation-delay: 0.2s;
+}
+
+.swatch:nth-child(2) {
+  fill: rgba(142, 36, 170, 0.7);  /* Purple */
+  transform: translate(150px, -120px) rotate(60deg);
+  animation-delay: 0.4s;
+}
+
+.swatch:nth-child(3) {
+  fill: rgba(3, 155, 229, 0.7);  /* Blue */
+  transform: translate(-180px, 150px) rotate(-30deg);
+  animation-delay: 0.6s;
+}
+
+.swatch:nth-child(4) {
+  fill: rgba(67, 160, 71, 0.7);  /* Green */
+  transform: translate(200px, 90px) rotate(15deg);
+  animation-delay: 0.8s;
+}
+
+.swatch:nth-child(5) {
+  fill: rgba(255, 235, 59, 0.7);  /* Yellow */
+  transform: translate(-250px, 200px) rotate(90deg);
+  animation-delay: 1s;
+}
+
+.swatch:nth-child(6) {
+  fill: rgba(255, 87, 34, 0.7);  /* Red */
+  transform: translate(250px, 50px) rotate(30deg);
+  animation-delay: 1.2s;
+}
+
+.swatch:nth-child(7) {
+  fill: rgba(121, 85, 72, 0.7);  /* Brown */
+  transform: translate(-100px, -50px) rotate(-90deg);
+  animation-delay: 1.4s;
+}
+
+.swatch:nth-child(8) {
+  fill: rgba(0, 188, 212, 0.7);  /* Teal */
+  transform: translate(-300px, 150px) rotate(120deg);
+  animation-delay: 1.6s;
+}
+
+.swatch:nth-child(9) {
+  fill: rgba(156, 39, 176, 0.7);  /* Pink */
+  transform: translate(250px, -150px) rotate(45deg);
+  animation-delay: 1.8s;
+}
+
+.swatch:nth-child(10) {
+  fill: rgba(0, 150, 136, 0.7);  /* Dark Teal */
+  transform: translate(300px, 200px) rotate(-60deg);
+  animation-delay: 2s;
+}
+
+/* New swatches in top left corner */
+.swatch:nth-child(11) {
+  fill: rgba(255, 64, 129, 0.7);  /* Light Pink */
+  transform: translate(-300px, -180px) rotate(150deg);
+  animation-delay: 2.2s;
+}
+
+.swatch:nth-child(12) {
+  fill: rgba(63, 81, 181, 0.7);  /* Indigo */
+  transform: translate(-200px, -220px) rotate(210deg);
+  animation-delay: 2.4s;
+}
+
+.swatch:nth-child(13) {
+  fill: rgba(233, 30, 99, 0.7);  /* Fuchsia */
+  transform: translate(-350px, -200px) rotate(270deg);
+  animation-delay: 2.6s;
+}
+
+.swatch:nth-child(14) { /* 14th because it's added after all previous swatches */
+  fill: rgba(255, 193, 7, 0.7); /* Yellow */
+  transform: translate(-80px, -50px) rotate(45deg); /* Move left and up by about 50% of its height */
+  animation-delay: 2.8s;
+}
+
+@keyframes placeSwatch {
+  to {
+    transform: translate(0, 0) rotate(0deg);
+    opacity: 1;
+  }
+}
+
+.swatch-clip {
+  clip-path: url(#text-clip);
+  transition: clip-path 2s cubic-bezier(0.25, 0.8, 0.25, 1);
+}
+
+#loading-screen.loaded .text-slide {
+  opacity: 1;
+  transform: translateX(-50%) translateY(0);
+}
+
+
+
+/* Main Content */
+#page-content {
+  display: block; /* Always block — handled in JS if needed */
+  opacity: 0;
+  
+  z-index: 1;
+  position: relative;
+}
+
+#page-content.fade-in {
+  opacity: 1;
+  transition: opacity 2s ease-in-out;
+}
+
+
+

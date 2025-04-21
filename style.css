@@ -1,0 +1,176 @@
+/* Reset and Base Styles */
+#info-overlay.hidden{
+    display: none;
+}
+#question-overlay.hidden{
+    display: none;
+}
+
+#page-content{
+    width: 100vw;
+    height: auto;
+}
+
+body {
+    margin: 0;
+    font-family: 'Open Sans', sans-serif;
+    background-color: #fff;
+    color: #555;
+  }
+  
+  #page-container {
+    display: flex;
+    /* height: 100vh;
+    overflow: hidden; */
+  }
+  
+  /* Sidebar Header */
+  #header {
+    width: 250px;
+    padding: 20px;
+    background-color: white;
+    flex-shrink: 0;
+    box-shadow: 2px 0 5px rgba(33, 32, 32, 0.1);
+  }
+  
+  #header h1 {
+    font-size: 48px;
+    font-weight: 800;
+    color: transparent;
+    -webkit-text-stroke: 2px #888;
+    margin: 0;
+    white-space: pre-line;
+  }
+  
+  #header h2 {
+    font-size: 14px;
+    text-transform: uppercase;
+    color: #888;
+    margin-top: 10px;
+  }
+  
+  /* Main Content Area */
+  #content {
+    display: flex;
+    flex-grow: 1;
+    padding: 10px 60px 60px 60px;
+    position: relative;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  #photo {
+    max-width: 100%;
+  }
+  
+  .quilt-photo {
+    max-height: 100vh;
+    height: auto;
+    display: block;
+  }
+  
+  /* Help Tools (bottom-left corner) */
+  #help-tools {
+    position: fixed;
+    bottom: 3%;
+    left: 2%;
+    display: inline-flex;              /* Use inline-flex so it wraps to fit content */
+    gap: 10px;
+    background-color: white;
+    border-radius: 50px;               /* Circle ends */
+    padding: 10px 15px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Optional: soft shadow */
+    z-index: 1000;
+  }
+  
+  
+  .help-icon {
+    width: 2vw;
+    height: 2vw;
+  }
+  
+
+  #next-icon{
+    position: fixed;
+    bottom: 2%;
+    right: 1.5%;
+    gap: 10px;
+    z-index: 1000;
+    width: 6.5vw;
+    height: 6.5vw;
+  }
+  
+  /* Tool Icons Sticky on Side */
+  #tools {
+    position: fixed;
+    top: 10%;
+    right: 20px;
+    z-index: 10;
+  }
+  
+  #icon-container {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    align-items: center;
+  }
+  
+  .icon {
+    width: 100px;
+    height: 100px;
+  }
+
+  #pocket-image{
+    max-width: 100%;
+    /* padding-top: 1vw; */
+  }
+
+  /* Fullscreen overlay */
+#info-overlay, #question-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.5); /* semi-transparent black */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 2000;
+  }
+  
+  /* Centered card */
+  .popup-card {
+    background-color: white;
+    padding: 40px;
+    /* border-radius: 10px; */
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.25);
+    max-width: 500px;
+    width: 90%;
+    position: relative;
+    text-align: center;
+  }
+  
+  /* Close button */
+  .close-button, .qclose-button {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    background: none;
+    border: none;
+    font-size: 24px;
+    cursor: pointer;
+  }
+  
+  
+  /* Hover effects */
+  .icon:hover,
+  .help-icon:hover {
+    transform: scale(1.05);
+    transition: transform 0.2s ease-in-out;
+    cursor: pointer;
+  }
+
+.hidden {
+    display: none;
+}

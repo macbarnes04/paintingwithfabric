@@ -53,18 +53,14 @@ body {
   #content {
     display: flex;
     flex-grow: 1;
-    padding: 10px 60px 60px 60px;
+    padding: 4vh 60px 60px 10px;
     position: relative;
     align-items: center;
     justify-content: center;
   }
   
-  #photo {
-    max-width: 100%;
-  }
-  
   .quilt-photo {
-    max-height: 100vh;
+    max-height: 90vh;
     height: auto;
     display: block;
   }
@@ -173,4 +169,55 @@ body {
 
 .hidden {
     display: none;
+}
+
+#photo {
+  width: fit-content;
+  height: auto;
+  padding-bottom: 90vh;
+  text-align: center;
+  position: relative; /* so absolute children anchor here */
+}
+
+.quilt-photo,
+#reference-photo {
+  position: absolute;
+  top: 0;
+  left: 0;
+  max-height: 90vh;
+  width: auto;
+  display: block;
+}
+.hover-reveal-container {
+  position: relative;
+  display: inline-block;
+}
+
+.hover-wrapper {
+  position: relative;
+  display: inline-block;
+}
+
+.quilt-photo,
+.hover-overlay {
+  max-height: 90vh;
+  height: auto;
+  display: block;
+  width: 100%;
+  object-fit: contain;
+}
+
+.hover-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  clip-path: circle(0px at 50% 50%);
+  transition: clip-path 0.2s ease-out;
+  pointer-events: none;
+  z-index: 2;
+}
+
+.quilt-photo {
+  z-index: 1;
+  position: relative;
 }

@@ -11,7 +11,6 @@
     <div id="loading-screen">
         <svg viewBox="0 0 800 300" xmlns="http://www.w3.org/2000/svg">
           <defs>
-            <!-- Define the text clipping path -->
             <clipPath id="text-clip">
               <text x="50%" y="50%" text-anchor="middle" dominant-baseline="middle"
                     font-size="55" font-family="'Open Sans', sans-serif" font-weight="800">
@@ -19,8 +18,6 @@
               </text>
             </clipPath>
           </defs>
-      
-          <!-- Colorful animated swatches (fabric pieces) -->
           <g id="swatches">
             <g class="swatch swatch-clip">
               <image class="fabric-texture" href="images/AdobeStock_298345354.png" x="150" y="80" width="120" height="120" clip-path="url(#text-clip)" />
@@ -102,19 +99,22 @@
             <section id="header">
                 <h1>Painting<br>With<br>Fabric</h1>
                 <h2>Exploring the quilt <br>works of Bisa Butler</h2>
-                <img id="pocket-image" src="images/colored-entrance-quilt.jpg" alt="">
+                <img id="pocket-image" src="images/quilts/colored-entrance-quilt.jpg" alt="">
             </section>
             <div id="content">
-                <section id="photo">
-                    <img class="quilt-photo" src="images/colored-entrance-quilt.jpg" alt="">
-                </section>
+              <section id="photo" class="hover-reveal-container">
+                  <div class="hover-wrapper">
+                    <img class="quilt-photo" src="images/quilts/colored-entrance-quilt.jpg" alt="">
+                    <img id="reference-photo" class="hover-overlay" src="images/references/colored_entrance-reference.png" alt="">
+                  </div>
+              </section>
                 <section id="tools">
                     <div id="icon-container">
-                        <img class="icon" src="icons/reference-icon.png" alt="">
+                        <img id="ref-button" class="icon" src="icons/reference-icon.png" alt="">
                         <img class="icon" src="icons/layers-icon.png" alt="">
                         <img class="icon" src="icons/stitching-icon.png" alt="">
                         <img class="icon" src="icons/resize.png" alt="">
-                        <img class="icon" src="icons/switch-icon.png" alt="">
+                        <img id="switch-button" class="icon" src="icons/switch-icon.png" alt="">
                     </div>
                 </section>
             </div>
@@ -141,5 +141,9 @@
     </div>
     <script src="js/popup.js"></script>
     <script src="js/loading.js"></script>
+    <script src="js/nextPhoto.js"></script>
+    <script src="js/switch.js"></script>
+    <script src="js/hover.js"></script>
+
 </body>
 </html>

@@ -8,7 +8,7 @@
 
 #page-content{
     width: 100vw;
-    height: auto;
+    height: 100vh;
 }
 
 body {
@@ -57,6 +57,7 @@ body {
     position: relative;
     align-items: center;
     justify-content: center;
+    max-height: 100vh;
   }
   
   .quilt-photo {
@@ -174,7 +175,6 @@ body {
 #photo {
   width: fit-content;
   height: auto;
-  padding-bottom: 90vh;
   text-align: center;
   position: relative; /* so absolute children anchor here */
 }
@@ -191,11 +191,13 @@ body {
 .hover-reveal-container {
   position: relative;
   display: inline-block;
+  max-height: 100vh;
 }
 
 .hover-wrapper {
   position: relative;
   display: inline-block;
+  max-height: 100vh;
 }
 
 .quilt-photo,

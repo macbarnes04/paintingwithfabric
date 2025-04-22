@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <title>Painting with Fabric</title>
-  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@100;300;400;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
   <link rel="stylesheet" href="loading.css">
 </head>
@@ -102,18 +102,18 @@
                 <img id="pocket-image" src="images/quilts/colored-entrance-quilt.jpg" alt="">
             </section>
             <div id="content">
-              <section id="photo" class="hover-reveal-container">
-                  <div class="hover-wrapper">
+                <section id="photo" class="hover-reveal-container">
+                  <div id="zoom-wrapper" class="hover-wrapper">
                     <img class="quilt-photo" src="images/quilts/colored-entrance-quilt.jpg" alt="">
                     <img id="reference-photo" class="hover-overlay" src="images/references/colored_entrance-reference.png" alt="">
                   </div>
-              </section>
+                </section>
                 <section id="tools">
                     <div id="icon-container">
                         <img id="ref-button" class="icon" src="icons/reference-icon.png" alt="">
                         <img class="icon" src="icons/layers-icon.png" alt="">
                         <img class="icon" src="icons/stitching-icon.png" alt="">
-                        <img class="icon" src="icons/resize.png" alt="">
+                        <img id="resize" class="icon" src="icons/resize.png" alt="">
                         <img id="switch-button" class="icon" src="icons/switch-icon.png" alt="">
                     </div>
                 </section>
@@ -128,14 +128,16 @@
             <div class="popup-card">
               <button type="button" class="close-button">&times;</button>
               <h2>About "Painting With Fabric"</h2>
-              <p>“Quilts always look different in person and always have more information to share”... “Painting with Fabric” is attempting to tell the story, digitally, of how Bisa Butler takes photographs of historically notable people, places, or events surrounding civil rights and Black movements, and turns them into quilt works. Layering, color choice, pattern, stitching, scale, abstraction, and transparency are all wielded by Butler within the realm of the fabric medium to create the illusion of “painting” but with fabric. Through loading animations that go between the original photo and the final work, along with purposeful use of zooming in, highlighting the selection of colors (think “paint by numbers”),  and using other reference materials to show texture in a 2D format, the viewer can dissect Butler’s brilliance similar to how one would view her quilt work in a gallery setting. </p>
+              <p>“Quilts always look different in person and always have more information to share”... “Painting with Fabric” tells the story, digitally, of how Bisa Butler takes photographs of historically notable people, places, or events surrounding civil rights and Black movements, and turns them into quilt works. Layering, color choice, pattern, stitching, scale, abstraction, and transparency are all wielded by Butler within the realm of the fabric medium to create the illusion of “painting” but with fabric. Through tools and overlays that go between reference photos, fabric processes, stitching, and more, the viewer can dissect Butler’s brilliance similar to how one could in a gallery setting.
+              </p>
+              <a href="https://www.bisabutler.com/portfolio" target="_blank">Learn More About Butler's Works Here</a>
             </div>
         </div>
         <div id="question-overlay" class="hidden">
             <div class="popup-card">
               <button type="button" class="qclose-button">&times;</button>
-              <h2>How to use?</h2>
-              <p>Here is how to use this website</p>
+              <h2>How to use this site?</h2>
+              <img id="tools-overview" src="images/How-to-use.png" alt="">
             </div>
         </div>
     </div>
@@ -144,6 +146,7 @@
     <script src="js/nextPhoto.js"></script>
     <script src="js/switch.js"></script>
     <script src="js/hover.js"></script>
+    <script src="js/zoom.js"></script>
 
 </body>
 </html>

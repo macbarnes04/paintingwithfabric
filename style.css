@@ -11,11 +11,25 @@
     height: 100vh;
 }
 
+p {
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 300; /* or 300 for slightly heavier thin text */
+}
 body {
     margin: 0;
     font-family: 'Open Sans', sans-serif;
     background-color: #fff;
     color: #555;
+  }
+
+  html, body {
+    overflow-x: auto;
+    overflow-y: auto;
+  }
+
+  #tools-overview{
+    max-width: 100%;
+    height: auto;
   }
   
   #page-container {
@@ -55,9 +69,9 @@ body {
     flex-grow: 1;
     padding: 4vh 60px 60px 10px;
     position: relative;
-    align-items: center;
-    justify-content: center;
+    align-items: top;
     max-height: 100vh;
+    overflow:scroll;
   }
   
   .quilt-photo {
@@ -90,11 +104,14 @@ body {
   #next-icon{
     position: fixed;
     bottom: 2%;
-    right: 1.5%;
+    right: 1%;
     gap: 10px;
     z-index: 1000;
     width: 6.5vw;
     height: 6.5vw;
+    border-radius: 50%;
+    padding: 5px;
+    background-color: white;
   }
   
   /* Tool Icons Sticky on Side */
@@ -103,6 +120,9 @@ body {
     top: 10%;
     right: 20px;
     z-index: 10;
+    background-color: white;
+    border-radius: 70px;               /* Circle ends */
+    padding: 19px 9px;
   }
   
   #icon-container {
@@ -115,6 +135,7 @@ body {
   .icon {
     width: 100px;
     height: 100px;
+    border-radius: 20px;
   }
 
   #pocket-image{
@@ -177,6 +198,7 @@ body {
   height: auto;
   text-align: center;
   position: relative; /* so absolute children anchor here */
+  padding-left: 25%;
 }
 
 .quilt-photo,
@@ -222,4 +244,9 @@ body {
 .quilt-photo {
   z-index: 1;
   position: relative;
+}
+
+#zoom-wrapper {
+  transform: scale(1); /* This will be increased with zoom */
+  transform-origin: top center; /* Keep it anchored at the top */
 }

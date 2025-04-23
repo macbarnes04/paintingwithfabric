@@ -1,6 +1,8 @@
+
+
 document.addEventListener("DOMContentLoaded", () => {
-    const nextIcon = document.getElementById("next-icon");
     const photoImg = document.querySelector("#photo .quilt-photo");
+    const nextIcon = document.getElementById("next-icon");
     const pocketImage = document.getElementById("pocket-image");
     const underlay = document.getElementById("reference-photo");
 
@@ -18,6 +20,22 @@ document.addEventListener("DOMContentLoaded", () => {
         "images/references/Harriet-Tubman-Reference.png"
     ]
 
+    const stitchImage = document.getElementById('stitching-photo');
+
+
+    const quiltCE = 'images/quilts/colored-entrance-quilt.jpg';
+    const quiltHT = 'images/quilts/harriet-tubman.png';
+
+    const stitchCE = '';
+    const stitchHT = 'images/stitching/HT-stitching.png';
+
+    if(photoImg.src.includes(quiltCE)){
+        stitchImage.src = stitchCE;
+    } else if(photoImg.src.includes(quiltHT)){
+        stitchImage.src = stitchHT;
+    }
+
+
     let currentIndex = 0;
 
     nextIcon.addEventListener("click", () => {
@@ -34,3 +52,4 @@ document.addEventListener("DOMContentLoaded", () => {
 
     });
 });
+

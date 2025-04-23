@@ -5,6 +5,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const nextIcon = document.getElementById("next-icon");
     const pocketImage = document.getElementById("pocket-image");
     const underlay = document.getElementById("reference-photo");
+    const workTitle = document.getElementById("work-title");
 
     // List of image sources
     const photoSources = [
@@ -29,10 +30,25 @@ document.addEventListener("DOMContentLoaded", () => {
     const stitchCE = '';
     const stitchHT = 'images/stitching/HT-stitching.png';
 
+    const workTitles = [
+        '"Colored Entrance"',
+        '"I Go To Prepare A Place For You"'
+    ]
+
+    const workhref = [
+        'https://high.org/collection/colored-entrance-after-department-store-mobile-alabama-by-gordon-parks-1956/',
+        'https://nmaahc.si.edu/object/nmaahc_2021.38'
+    ]
+
     if(photoImg.src.includes(quiltCE)){
         stitchImage.src = stitchCE;
+        workTitle.textContent = '"Colored Entrance"';
+        workTitle.href = "https://high.org/collection/colored-entrance-after-department-store-mobile-alabama-by-gordon-parks-1956/";
+
     } else if(photoImg.src.includes(quiltHT)){
         stitchImage.src = stitchHT;
+        workTitle.textContent = '"I Go To Prepare A Place For You"';
+        workTitle.href = "https://nmaahc.si.edu/object/nmaahc_2021.38";
     }
 
 
@@ -43,12 +59,15 @@ document.addEventListener("DOMContentLoaded", () => {
         currentIndex = (currentIndex + 1) % photoSources.length;
 
         const nextSrc = photoSources[currentIndex];
-        const nextref = refSources[currentIndex]
-
+        const nextref = refSources[currentIndex];
+        const nexthref = workhref[currentIndex];
+        const nextTitle = workTitles[currentIndex]
         // Update both images
         photoImg.src = nextSrc;
         pocketImage.src = nextSrc;
         underlay.src = nextref;
+        workTitle.textContent = nextTitle;
+        workTitle.href = nexthref;
 
     });
 });

@@ -250,3 +250,17 @@ body {
   transform: scale(1); /* This will be increased with zoom */
   transform-origin: top center; /* Keep it anchored at the top */
 }
+
+#title-container{
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
+
+a{
+  color: #cbcbcb;
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 100; /* or 300 for slightly heavier thin text */
+}
